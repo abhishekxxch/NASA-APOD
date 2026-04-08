@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NASA APOD - Astronomy Picture of the Day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="hero">
+      <span class="eyebrow">NASA APOD</span>
+      <h1>Discover the Universe One Day at a Time</h1>
+      <p>Pick a date to reveal NASA's Astronomy Picture of the Day with crisp visuals and the science behind it.</p>
+    </header>
+
+    <main class="card">
+      <!-- Search Form -->
+      <div class="form-container">
+        <form id="birthdayForm" class="search-form">
+          <label for="birthday" class="sr-only">Select a date</label>
+          <input type="date" id="birthday" name="birthday" required />
+          <button type="submit" class="btn btn-primary">Show APOD</button>
+          <button type="button" id="randomBtn" class="btn btn-secondary">🎲 Random</button>
+        </form>
+      </div>
+
+      <!-- Error Message -->
+      <div id="error-message" class="error-message" role="alert"></div>
+
+      <!-- Loading Spinner -->
+      <div id="loading-spinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+        <p>Loading cosmic wonder...</p>
+      </div>
+
+      <!-- APOD Content -->
+      <div id="apod-container" class="apod-container"></div>
+
+      <!-- Favorites Section -->
+      <section id="favorites-section" class="favorites-section hidden">
+        <div class="favorites-title">
+          <h3>⭐ Saved Favorites</h3>
+          <button id="clearFavoritesBtn" class="btn btn-small">Clear All</button>
+        </div>
+        <div id="favorites-list" class="favorites-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
